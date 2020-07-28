@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Urubu</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <!-- Bootstrap -->
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" media="screen">
+
+    <link href="/css/site.css" rel="stylesheet" media="screen">
+    <link href="/css/syntax.css" rel="stylesheet" media="screen">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+ 
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">Urubu</a>
+        </div>
+        <div class="navbar-collapse collapse">
+
+          <ul class="nav navbar-nav navbar-left">
+            <li><a href="/jenkins.html">Jenkins</a></li>
+            <li><a href="/python.html">Python</a></li>
+          </ul>
+
+          <form class="navbar-form navbar-left" action="/search.html" role="search">
+            <div class="form-group">
+              <input type="text" required name="q" id="tipue_search_input" class="form-control" placeholder="Search"> 
+            </div>
+          </form>
+
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+              <a href="/mais/" class="dropdown-toggle" data-toggle="dropdown">Mais <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="/index.html">Urubu</a></li>
+              </ul>
+            </li>
+          </ul>
+
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+
+<div class="container">
+
+
+  <div class="page-header">
+    <h1>Urubu</h1>
+  </div>
+
+  <div class="row">
+
+    <div class="col-md-7 content" role="main">
+    <main>
+      <p class="lead">Urubu é um micro CMS de arquivos estáticos.</p>
+<h2 id="isso-significa">Isso significa...</h2>
+<p>Isso significa nada de banco de dados ou configurações complexas, 
+direto do git para o servidor!</p>
+<p>Tudo o que precisamos é criar nossos arquivos <code>.md</code> e rodar o comando
+<code>make</code> para que sejam convertidos para arquivos <code>.html</code>.</p>
+<p>Isso é perfeito para você criar o seu próprio blog em python!</p>
+<h2 id="arquivos-de-conteudo">Arquivos de conteúdo</h2>
+<p>Todos os arquivos de conteúdo começam com uma sesssão delimitada por três traços <code>---</code>
+onde definimos o <code>title</code> e o <code>layout</code>.</p>
+<p>Esta página por exemplo, começa assim:</p>
+<div class="codehilite"><pre><span></span>---
+title: Urubu
+layout: page
+content:
+    - jenkins
+    - python
+    - mais
+---
+</pre></div>
+
+
+<p>Depois disso basta escrever em markdown.</p>
+<h2 id="layouts">Layouts</h2>
+<p>Todos os arquivos de conteúdo utilizam a variável <code>layout</code> para especificar o
+desenho da página.</p>
+<p>Existem alguns exemplos no diretório <code>_layout</code>, mas aqui vamos utilizar apenas
+aquele chamado <code>page</code>.</p>
+    </main>
+    </div>
+
+    <div class="col-md-3" role="complementary">
+      <nav class="hidden-print hidden-xs hidden-sm">
+        <div class="sidebar" data-spy="affix" data-offset-top="80" data-offset-bottom="60">
+          <div class="well">
+            <a href="#"><strong>Urubu</strong></a>
+            <div class="toc">
+<ul>
+<li><a href="#isso-significa">Isso significa...</a></li>
+<li><a href="#arquivos-de-conteudo">Arquivos de conteúdo</a></li>
+<li><a href="#layouts">Layouts</a></li>
+</ul>
+</div>
+
+          </div>
+        </div>
+      </nav>
+    </div>
+
+  </div>
+
+    <div class="footer">
+        <p>Website powered by <a href="http://urubu.jandecaluwe.com">Urubu</a></p>
+    </div>
+
+
+</div>
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!-- <script src="https://code.jquery.com/jquery.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+ 
+
+  </body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Jenkins</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <!-- Bootstrap -->
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" media="screen">
+
+    <link href="/css/site.css" rel="stylesheet" media="screen">
+    <link href="/css/syntax.css" rel="stylesheet" media="screen">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+ 
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">Urubu</a>
+        </div>
+        <div class="navbar-collapse collapse">
+
+          <ul class="nav navbar-nav navbar-left">
+            <li class="active"><a href="/jenkins.html">Jenkins</a></li>
+            <li><a href="/python.html">Python</a></li>
+          </ul>
+
+          <form class="navbar-form navbar-left" action="/search.html" role="search">
+            <div class="form-group">
+              <input type="text" required name="q" id="tipue_search_input" class="form-control" placeholder="Search"> 
+            </div>
+          </form>
+
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+              <a href="/mais/" class="dropdown-toggle" data-toggle="dropdown">Mais <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="/index.html">Urubu</a></li>
+              </ul>
+            </li>
+          </ul>
+
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+
+<div class="container">
+
+  <ol class="breadcrumb">
+    <li><a href="/">Home</a></li>
+      <li class="active">Jenkins</li>
+  </ol>
+
+  <div class="page-header">
+    <h1>Jenkins</h1>
+  </div>
+
+  <div class="row">
+
+    <div class="col-md-7 content" role="main">
+    <main>
+      <p class="lead">Jenkins é um software utilizado para CI/CD</p>
+<h2 id="jenkins">Jenkins</h2>
+<p><a href="https://jenkins.io/">Jenkins</a> é uma ferramenta utilizada para <em>integração contínua</em> e <em>entrega contínua</em>, popularmente conhecido como <strong>CI/CD</strong> - <strong>C</strong>ontinuous <strong>I</strong>ntegration e <strong>C</strong>ontinuous <strong>D</strong>elivery.
+Seu papel é integrar à esteira de produção de software outros programas responsáveis por testes unitários, análise de código, testes de stress e qualidade para que então uma nova versão possa ser disponibilizada em produção, ou em algum repositório de artefatos, com uma alta taxa de confiabilidade.
+O Jenkins é um dos grandes nomes ao lado do Docker dentro do universo DevOps.</p>
+<p>Cada projeto dentro do Jenkins é conhecido como <strong>Job</strong>, sendo dois deles mais comuns, o <em>freestyle</em> e a <em>pipeline</em>.</p>
+<h4 id="freestyle">Freestyle</h4>
+<p>Jobs do tipo freestyle são construídos pelo próprio painel do Jenkins e geralmente emendam vários passos em shell script, ou outros módulos de modo a criar uma esteira única. A vantagem desse tipo de job é a facilidade em criar pequenas automações principalmente em <strong>shell script</strong>, a desvantagem está na difícil manutenção e falta de padronização.</p>
+<h4 id="pipeline">Pipeline</h4>
+<p>A pipeline tem sido a forma de trabalho padrão, inclusive em outras ferramentas, são scripts que controlam todos os estados da esteira, podem ser versionados e incluídos de repositórios remotos sob demanda. O Jenkins utiliza uma DSL chamda de <strong>Pipeline</strong>, e os arquivos ou a forma como é escrita recebe o nome de <strong>Jenkinsfile</strong>. Para casos mais complexos é possível utilizar <a href="http://groovy-lang.org/">Groovy</a> como linguagem de script o que extenderá e muito a capacidade lógica da pipeline.</p>
+<p>Um exemplo da sintaxe de um <code>Jenkinsfile</code> seria o seguinte:</p>
+<div class="codehilite"><pre><span></span><span class="nx">pipeline</span> <span class="p">{</span>
+    <span class="nx">agent</span> <span class="nx">any</span>
+
+    <span class="nx">stages</span> <span class="p">{</span>
+        <span class="nx">stage</span><span class="p">(</span><span class="s1">&#39;Build&#39;</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">steps</span> <span class="p">{</span>
+                <span class="nx">echo</span> <span class="s1">&#39;Building..&#39;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="nx">stage</span><span class="p">(</span><span class="s1">&#39;Test&#39;</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">steps</span> <span class="p">{</span>
+                <span class="nx">echo</span> <span class="s1">&#39;Testing..&#39;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="nx">stage</span><span class="p">(</span><span class="s1">&#39;Deploy&#39;</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">steps</span> <span class="p">{</span>
+                <span class="nx">echo</span> <span class="s1">&#39;Deploying....&#39;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+    </main>
+    <ul class="pager">
+      <li class="next"><a href="/python.html">Python &rarr;</a></li>
+    </ul>
+    </div>
+
+    <div class="col-md-3" role="complementary">
+      <nav class="hidden-print hidden-xs hidden-sm">
+        <div class="sidebar" data-spy="affix" data-offset-top="80" data-offset-bottom="60">
+          <div class="well">
+            <a href="#"><strong>Jenkins</strong></a>
+            <div class="toc">
+<ul>
+<li><a href="#jenkins">Jenkins</a><ul>
+<li><a href="#freestyle">Freestyle</a></li>
+<li><a href="#pipeline">Pipeline</a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+          </div>
+        </div>
+      </nav>
+    </div>
+
+  </div>
+
+    <div class="footer">
+        <p>Website powered by <a href="http://urubu.jandecaluwe.com">Urubu</a></p>
+    </div>
+
+
+</div>
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!-- <script src="https://code.jquery.com/jquery.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+ 
+
+  </body>
+</html>
